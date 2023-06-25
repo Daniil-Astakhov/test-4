@@ -34,6 +34,7 @@ export const LoginForm = (props) => {
     redirect,
     showMessage,
     message,
+    allowRedirect = true,
   } = props;
 
   const initialCredential = {
@@ -57,7 +58,7 @@ export const LoginForm = (props) => {
   };
 
   useEffect(() => {
-    if (token === null) {
+    if (token === null && allowRedirect) {
       navigate(redirect);
     }
     if (showMessage) {
