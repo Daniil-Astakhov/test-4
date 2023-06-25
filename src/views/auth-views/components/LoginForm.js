@@ -58,7 +58,7 @@ export const LoginForm = (props) => {
   };
 
   useEffect(() => {
-    if (token === null && allowRedirect) {
+    if (token !== null && allowRedirect) {
       navigate(redirect);
     }
     if (showMessage) {
